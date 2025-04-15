@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Fontanería Balmis</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <h1><img src="img/logo.png" alt="Logo Fontanería Balmis" class="logo"> Fontanería Balmis</h1>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html" class="activo">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <h2>Gestión de Servicios</h2>
+
+        <div class="controles-superiores">
+            <button id="btn-nuevo-servicio" class="btn-primario">+ Nuevo Servicio</button>
+            <div class="filtros">
+                <select id="filtro-estado">
+                    <option value="todos">Todos</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="aprobado">Aprobados</option>
+                    <option value="completado">Completados</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tabla-contenedor">
+            <table id="tabla-servicios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Cliente</th>
+                        <th>Fontanero</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="modal-servicio" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h3 id="titulo-modal">Nuevo Servicio</h3>
+                <form id="form-servicio">
+                    <input type="hidden" id="servicio-id">
+                    <div class="grupo-form">
+                        <label for="modal-tipo">Tipo de servicio:</label>
+                        <select id="modal-tipo" required>
+                            <option value="instalacion">Instalación</option>
+                            <option value="reparacion">Reparación</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-cliente">Cliente:</label>
+                        <select id="modal-cliente" required></select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-fontanero">Fontanero:</label>
+                        <select id="modal-fontanero" required></select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-fecha">Fecha:</label>
+                        <input type="date" id="modal-fecha" required>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label>Productos utilizados:</label>
+                        <div id="modal-productos" class="lista-productos-modal"></div>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-estado">Estado:</label>
+                        <select id="modal-estado">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="aprobado">Aprobado</option>
+                            <option value="completado">Completado</option>
+                        </select>
+                    </div>
+
+                    <div class="acciones-form">
+                        <button type="submit" class="btn-primario">Guardar</button>
+                        <button type="button" class="btn-secundario cerrar-modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Fontanería Balmis, soluciones profesionales desde 2020</p>
+    </footer>
+
+    <script src="js/servicios.js"></script>
+</body>
+
+</html>

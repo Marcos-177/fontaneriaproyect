@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Fontanería Balmis</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <h1><img src="img/logo.png" alt="Logo Fontanería Balmis" class="logo"> Fontanería Balmis</h1>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html" class="activo">Productos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <h2>Catálogo de Productos</h2>
+
+        <div class="controles-superiores">
+            <div class="busqueda">
+                <input type="text" id="buscar-producto" placeholder="Buscar productos...">
+                <button id="btn-buscar">Buscar</button>
+            </div>
+            <button id="btn-nuevo-producto" class="btn-primario">+ Nuevo Producto</button>
+        </div>
+
+        <div class="grid-productos" id="lista-productos">            
+        </div>
+
+        <div id="modal-producto" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h3 id="titulo-modal-producto">Nuevo Producto</h3>
+                <form id="form-producto">
+                    <input type="hidden" id="producto-id">
+                    <div class="grupo-form">
+                        <label for="modal-nombre">Nombre:</label>
+                        <input type="text" id="modal-nombre" required>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-precio">Precio (€):</label>
+                        <input type="number" id="modal-precio" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-stock">Stock:</label>
+                        <input type="number" id="modal-stock" min="0" required>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-imagen">Imagen:</label>
+                        <input type="file" id="modal-imagen" accept="image/*">
+                        <div id="vista-previa-imagen"></div>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="modal-descripcion">Descripción:</label>
+                        <textarea id="modal-descripcion" rows="4"></textarea>
+                    </div>
+
+                    <div class="acciones-form">
+                        <button type="submit" class="btn-primario">Guardar</button>
+                        <button type="button" class="btn-secundario cerrar-modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Fontanería Balmis, soluciones profesionales desde 2020</p>
+    </footer>
+
+    <script src="js/productos.js"></script>
+</body>
+
+</html>

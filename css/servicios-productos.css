@@ -1,0 +1,112 @@
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #3498db;
+    --color-fondo: #ecf0f1;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+.cabecera {
+    background: var(--color-primario);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecera h1 {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.logo {
+    height: 100px;
+}
+
+.navegacion a.activo {
+    color: var(--color-secundario);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-secundario);
+}
+.navegacion ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+}
+
+.navegacion a:hover {
+    color: var(--color-secundario);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.seccion {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+.formulario {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.tarjetas-inicio {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .tarjetas-inicio {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background: var(--color-primario);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
